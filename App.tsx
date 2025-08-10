@@ -22,21 +22,17 @@ export default function App() {
   };
 
   return (
-    <div style={{ fontFamily: 'Arial', padding: 20 }}>
-      <h1>InstaStyle — Gemini 2.0 Flash</h1>
-      <textarea
-        value={prompt}
-        onChange={e => setPrompt(e.target.value)}
-        rows={6}
-        cols={60}
-      />
-      <div style={{ marginTop: 10 }}>
+    <div style={{fontFamily:'Arial, sans-serif', padding:20}}>
+      <h1>InstaStyle — Vercel (backend seguro)</h1>
+      <p>Prompt para Gemini (chave fica no backend).</p>
+      <textarea value={prompt} onChange={e=>setPrompt(e.target.value)} rows={6} cols={60} />
+      <div style={{marginTop:10}}>
         <button onClick={handleGenerate} disabled={loading || !prompt.trim()}>
           {loading ? 'Gerando...' : 'Gerar'}
         </button>
       </div>
-      {error && <pre style={{ color: 'crimson' }}>{error}</pre>}
-      {result && <pre style={{ whiteSpace: 'pre-wrap', background: '#f3f3f3', padding: 10 }}>{result}</pre>}
+      {error && <pre style={{color:'crimson'}}>{error}</pre>}
+      {result && <pre style={{whiteSpace:'pre-wrap', background:'#f3f3f3', padding:10}}>{result}</pre>}
     </div>
   );
 }
